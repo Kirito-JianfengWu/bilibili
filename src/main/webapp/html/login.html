@@ -2,9 +2,33 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Login bilibili</title>
+    <title>Login bilibili []~(￣▽￣)~*</title>
+    <link rel="stylesheet" type="text/css" href="../css/login.css">
+    <link href="https://cdn.bootcss.com/font-awesome/5.12.1/css/all.min.css" rel="stylesheet">
 </head>
-<body>
-    <h1>请登录bilibili</h1>
+<body onload="load()">
+    <!--loader页面加载动画-->
+    <iframe id="loading" src="loader.html"></iframe>
+    <div class="loginBox">
+        <img class="user" src="../images/user-icon.png" height="100px" width="100px">
+        <h3 class="signTitle">Sign in here</h3>
+        <form>
+            <div class="inputBox">
+                <input type="text" name="" placeholder="Username" autofocus="autofocus">
+                <span>
+                    <i class="fa fa-user" aria-hidden="true"></i>
+                </span>
+            </div>
+            <div class="inputBox">
+                <input type="password" name="" placeholder="Password">
+                <span>
+                    <i class="fa fa-lock" aria-hidden="true"></i>
+                </span>
+            </div>
+            <input type="submit" name="" value="login">
+        </form>
+        <a href="#">Forget Password</a>
+    </div>
+    <script type="text/javascript" src="../js/login.js"></script>
 </body>
 </html>
