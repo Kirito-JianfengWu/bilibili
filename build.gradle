@@ -1,12 +1,11 @@
 plugins {
     id 'org.springframework.boot' version '2.2.5.RELEASE'
-//    id 'io.spring.dependency-management' version '1.0.8.RELEASE'
+    id 'io.spring.dependency-management' version '1.0.9.RELEASE'
     id 'org.asciidoctor.convert' version '1.5.8'
     id 'java'
     id 'war'
 }
 
-apply plugin: 'io.spring.dependency-management'
 group = 'com.se7en'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '1.8'
@@ -44,6 +43,8 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-web'
     implementation 'org.springframework.boot:spring-boot-starter-web-services'
     developmentOnly 'org.springframework.boot:spring-boot-devtools'
+    compileOnly 'org.projectlombok:lombok'
+    annotationProcessor 'org.projectlombok:lombok'
     runtimeOnly 'com.oracle.ojdbc:ojdbc8'
     runtimeOnly 'mysql:mysql-connector-java'
     providedRuntime 'org.springframework.boot:spring-boot-starter-tomcat'

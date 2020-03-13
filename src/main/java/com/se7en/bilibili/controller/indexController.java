@@ -65,9 +65,9 @@ public class indexController {
         return "login";
     }
 
-    @RequestMapping(value = "/login")
+    @RequestMapping(value = "/login", method = RequestMethod.POST)
     public String login() {
-        System.out.println("(/, "+simpleDateFormat.format(new Date())+")");
-        return "login";
+        System.out.println("(/login, "+simpleDateFormat.format(new Date())+")");
+        return "index";
     }
 }

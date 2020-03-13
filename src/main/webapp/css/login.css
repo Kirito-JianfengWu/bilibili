@@ -1,3 +1,15 @@
+/*防止chrome浏览器自动填充导致账号密码框的样式改变*/
+input:-webkit-autofill , textarea:-webkit-autofill, select:-webkit-autofill {
+
+    -webkit-text-fill-color: #925b47;
+    /*改变光标颜色*/
+    caret-color: #925b47;
+    -webkit-box-shadow: 0 0 0px 1000px transparent  inset;
+    background-color:transparent;
+    background-image: none;
+    transition: background-color 50000s ease-in-out 0s;
+}
+
 body {
     margin: 0;
     padding: 0;
@@ -7,7 +19,7 @@ body {
     background-repeat: no-repeat;
     background-size: 100% 100%;
     background-attachment: fixed;
-    font-family: "Microsoft YaHei UI Light";
+    font-family: "Microsoft YaHei UI Light", serif;
 }
 
 .loginBox {
@@ -96,6 +108,7 @@ body {
     color: #e0c6b7;
     border-radius: 20px;
     cursor: pointer;
+    margin-bottom: 40px;
 }
 
 .loginBox input[type="submit"]:hover {
@@ -110,6 +123,7 @@ body {
     text-align: center;
     display: block;
     user-select: none;
+    margin-bottom: 15px;
 }
 
 #loading {

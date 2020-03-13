@@ -1,3 +1,8 @@
+//失去会话后跳转到login.html页面时,保持login.html页面为最前端
+if(top.location != location){
+    top.location.href = location.href;
+}
+
 let loading = document.getElementById('loading');
 
 function load() {
