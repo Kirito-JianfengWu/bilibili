@@ -20,13 +20,13 @@ public class indexController {
     //Spring Security BCrypt加密方式
 //    BCryptPasswordEncoder bCryptPasswordEncoder = new BCryptPasswordEncoder();
     //设置日期格式
-    SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+//    SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 
-    /**
-     * 处理头像
-     * @param img
-     */
-    public static void rotundity_img(String img) {
+//    /**
+//     * 处理头像
+//     * @param img
+//     */
+    /*public static void rotundity_img(String img) {
         try {
             // 读取图片
             BufferedImage bi1 = ImageIO.read(new File(img));
@@ -43,8 +43,8 @@ public class indexController {
             g2 = image.createGraphics();
             // 使用 setRenderingHint 设置抗锯齿
             g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
-    /*        g2.setColor(Color.WHITE);
-            g2.fillRect(0, 0, WIDTH, HEIGHT);*/
+    *//*        g2.setColor(Color.WHITE);
+            g2.fillRect(0, 0, WIDTH, HEIGHT);*//*
             g2.setComposite(AlphaComposite.Clear);
             g2.fill(new Rectangle(image.getWidth(), image.getHeight()));
             g2.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC, 1.0f));
@@ -56,18 +56,18 @@ public class indexController {
         } catch (IOException e) {
             e.printStackTrace();
         }
-    }
+    }*/
 
 
     @RequestMapping(value = "/", method = RequestMethod.GET)
     public String hello() {
-        System.out.println("(/, "+simpleDateFormat.format(new Date())+")");
+//        System.out.println("(/, "+simpleDateFormat.format(new Date())+")");
         return "login";
     }
 
     @RequestMapping(value = "/login", method = RequestMethod.POST)
     public String login() {
-        System.out.println("(/login, "+simpleDateFormat.format(new Date())+")");
+//        System.out.println("(/login, "+simpleDateFormat.format(new Date())+")");
         return "index";
     }
 }

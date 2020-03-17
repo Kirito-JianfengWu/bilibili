@@ -19,6 +19,7 @@ body {
     background-repeat: no-repeat;
     background-size: 100% 100%;
     background-attachment: fixed;
+    /*background-color: #191919;*/
     font-family: "Microsoft YaHei UI Light", serif;
 }
 
@@ -29,14 +30,14 @@ body {
     transform: translate(-50%, -50%);
     width: 350px;
     min-height: 200px;
-    background: rgba(255, 255, 255,0.4);
+    background-color: rgba(255, 255, 255,0.4);
     border-radius: 10px;
     padding: 40px;
     box-sizing: border-box;
     /*overflow: hidden;*/
 }
 
-.loginBox::after {
+.loginBox::before {
     content: '';
     position: absolute;
     top: 0;
@@ -50,6 +51,7 @@ body {
     background-repeat: no-repeat;
     /*background-size: 100% 100%;*/
     background-attachment: fixed;
+    background-color: #191919;
     filter: blur(10px);
 }
 

@@ -4,7 +4,7 @@ body{
     display: flex; /* 弹性盒模型 */
     justify-content: center; /* 主轴对齐方式 */
     align-items: center; /* 交叉轴对齐方式 */
-    background: #121417; /* 背景颜色 */
+    background: #191919; /* 背景颜色 */
     height: 100vh; /* 高度 */
 }
 .loader{
@@ -54,6 +54,6 @@ body{
     left: 10px;
     right: 10px;
     bottom: 10px;
-    background: #121417;
+    background: #191919;
     border-radius: 50%;
 }

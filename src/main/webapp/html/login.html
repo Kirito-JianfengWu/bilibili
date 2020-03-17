@@ -1,14 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <title>Login bilibili []~(￣▽￣)~*</title>
+    <link rel="shortcut icon" th:href="@{../images/favicon.ico}"/>
+    <link rel="bookmark" th:href="@{../images/favicon.ico}"/>
     <link rel="stylesheet" type="text/css" href="../css/login.css">
     <link href="https://cdn.bootcss.com/font-awesome/5.12.1/css/all.min.css" rel="stylesheet">
 </head>
 <body onload="load()">
     <!--loader页面加载动画 iframe的src需要写html/不然项目启动后寻址不到-->
-    <iframe id="loading" src="html/loader.html"></iframe>
+    <iframe id="loading" src="../html/loader.html"></iframe>
     <div class="loginBox">
         <img class="user" src="../images/user-icon.png" height="100px" width="100px">
         <h3 class="signTitle">Sign in here</h3>
@@ -27,7 +29,7 @@
             </div>
             <input type="submit" name="" value="login">
         </form>
-        <a href="html/logon.html">Register</a>
+        <a href="../html/logon.html">Register</a>
         <a href="#">Forget Password</a>
     </div>
     <script type="text/javascript" src="../js/login.js"></script>
