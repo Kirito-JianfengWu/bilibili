@@ -4,5 +4,8 @@ import com.se7en.bilibili.entity.Authorities;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface AuthoritiesRepository extends JpaRepository<Authorities, String>{
+
+    Authorities findByAuthoritiesid(String authoritiesid);
+
     Authorities findByAuthoritiesname(String authoritiesname);
 }

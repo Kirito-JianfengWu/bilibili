@@ -110,7 +110,7 @@ body {
     color: #e0c6b7;
     border-radius: 20px;
     cursor: pointer;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
 }
 
 .loginBox input[type="submit"]:hover {
@@ -125,7 +125,7 @@ body {
     text-align: center;
     display: block;
     user-select: none;
-    margin-bottom: 15px;
+    margin-top: 15px;
 }
 
 #loading {

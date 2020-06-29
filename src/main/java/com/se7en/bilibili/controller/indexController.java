@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @Controller
 public class indexController {
 
-    @RequestMapping(value = "/", method = RequestMethod.GET)
+    @RequestMapping(value = "/")
     // 将"/"请求响应到login页面
     public String hello() {
 //        System.out.println("(/, "+simpleDateFormat.format(new Date())+")");
@@ -15,10 +15,10 @@ public class indexController {
         return "login";
     }
 
-    @RequestMapping(value = "/login", method = RequestMethod.POST)
+    @RequestMapping(value = "/login")
     public String login() {
 //        System.out.println("(/login, "+simpleDateFormat.format(new Date())+")");
-
+        
         return "index";
     }
 

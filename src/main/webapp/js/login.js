@@ -1,7 +1,8 @@
-//失去会话后跳转到login.html页面时,保持login.html页面为最前端
-if(top.location != location){
+// 失去会话后跳转到login.html页面时,保持login.html页面为最前端
+// [注意]如果Spring Security已经配置.loginPage("/")则不用设置, 否则会一直不听跳转本页面
+/*if(top.location != location){
     top.location.href = location.href;
-}
+}*/
 
 let loading = document.getElementById('loading');
 

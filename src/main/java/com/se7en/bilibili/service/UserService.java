@@ -114,9 +114,8 @@ public class UserService implements UserDetailsService {
         List<GrantedAuthority> grantedAuthorityList = new ArrayList<>();
         // 获得当前用户权限
         // 将关联对象Role的Rolename属性保存为用户的认证权限
-        System.out.println(roleRepository.getOne(userRole.getRoleid()).toString());
-        grantedAuthorityList.add(new SimpleGrantedAuthority("ROLE_ADMIN"));
-//        grantedAuthorityList.add(new SimpleGrantedAuthority(roleRepository.getOne(userRole.getRoleid()).getRolename()));
+//        System.out.println(roleRepository.findByRoleid(userRole.getRoleid()).toString());
+        grantedAuthorityList.add(new SimpleGrantedAuthority(roleRepository.findByRoleid(userRole.getRoleid()).getRolename()));
         // 此处返回的是org.springframework.security.core.userdetails.User类
         // 该类是Spring Security内部的实现, 专门用于保存用户名、密码、权限等与认证相关的信息
         return new User(username, userRole.getPassword(), grantedAuthorityList);
