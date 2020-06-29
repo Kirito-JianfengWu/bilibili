@@ -1,34 +1,37 @@
 package com.se7en.bilibili.entity;
 
 import lombok.Data;
-import java.io.Serializable;
+import org.hibernate.annotations.GenericGenerator;
+
 import javax.persistence.*;
+import java.io.Serializable;
 
 @Data
 @Entity
 @Table(name = "user_role")
+@GenericGenerator(name = "jpa-uuid", strategy = "uuid")
 public class UserRole implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	@Column(name = "UserID")
+	@GeneratedValue(generator = "jpa-uuid")
+	@Column(name = "userid", nullable = false)
 	private String userid;
 
-	@Column(name = "UserName")
+	@Column(name = "username", nullable = false)
 	private String username;
 
-	@Column(name = "RoleID")
+	@Column(name = "roleid", nullable = false)
 	private String roleid;
 
-	@Column(name = "PassWord")
+	@Column(name = "password", nullable = false)
 	private String password;
 
-	@Column(name = "Gender")
+	@Column(name = "gender")
 	private String gender;
 
-	@Column(name = "Email")
+	@Column(name = "email")
 	private String email;
 
 }

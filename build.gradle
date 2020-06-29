@@ -45,7 +45,6 @@ dependencies {
         exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
     }
     testImplementation 'org.springframework.security:spring-security-test'
-    compile 'com.alibaba:fastjson:1.2.70'
 }
 test {
     useJUnitPlatform()
