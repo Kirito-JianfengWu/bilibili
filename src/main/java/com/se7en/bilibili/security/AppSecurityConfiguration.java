@@ -67,6 +67,8 @@ public class AppSecurityConfiguration extends WebSecurityConfigurerAdapter {
     // .headers().frameOptions().disable() 表示取消禁止网页被Frame, 使得网页可以被Frame[Spring Security默认使用X-Frame-Options防止网页被Frame]
     // .csrf().disable() 表示关闭Spring Security的跨域保护(CSRF Protection)
     // .failureUrl("/") 表示登录失败后发送的请求[GET]
+    // .successHandler(appAuthenticationSuccessHandler).successHandler(appAuthenticationSuccessHandler) 登录成功处理, 可以按权限分别进入不同的登录页面
+    // .defaultSuccessUrl("/login") 登录成功后默认的页面
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http
@@ -79,9 +81,10 @@ public class AppSecurityConfiguration extends WebSecurityConfigurerAdapter {
             .formLogin()
                 .loginPage("/")
                 .loginProcessingUrl("/login")
-                .successHandler(appAuthenticationSuccessHandler)
                 .usernameParameter("username")
                 .passwordParameter("password")
+                .failureForwardUrl("/loginError")
+                .defaultSuccessUrl("/html/index.html")
                 .and()
             .logout().permitAll()
                 .and()

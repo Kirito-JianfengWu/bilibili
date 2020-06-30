@@ -19,8 +19,12 @@ public class InitialDataLoader implements ApplicationListener<ContextRefreshedEv
 
     @Override
     public void onApplicationEvent(ContextRefreshedEvent event) {
-        userService.InitRole();
 
+        if (alreadySetup) {
+            return;
+        }
+
+        userService.InitRole();
         userService.InitSuperAdminUserRole();
 
         alreadySetup = true;

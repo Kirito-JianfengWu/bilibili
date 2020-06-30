@@ -49,7 +49,6 @@ public class UserService implements UserDetailsService {
         boolean isRoleUserExist = false;
         List<Role> roleList = roleRepository.findAll();
         for (Role role : roleList) {
-//            System.out.format("%s : %s \n", role.getRoleid(), role.getRolename());
             if ("ROLE_ADMIN".equals(role.getRolename())) {
                 isRoleAdminExist = true;
             }
@@ -114,10 +113,10 @@ public class UserService implements UserDetailsService {
         List<GrantedAuthority> grantedAuthorityList = new ArrayList<>();
         // 获得当前用户权限
         // 将关联对象Role的Rolename属性保存为用户的认证权限
-//        System.out.println(roleRepository.findByRoleid(userRole.getRoleid()).toString());
         grantedAuthorityList.add(new SimpleGrantedAuthority(roleRepository.findByRoleid(userRole.getRoleid()).getRolename()));
         // 此处返回的是org.springframework.security.core.userdetails.User类
         // 该类是Spring Security内部的实现, 专门用于保存用户名、密码、权限等与认证相关的信息
+
         return new User(username, userRole.getPassword(), grantedAuthorityList);
     }
 }

@@ -45,7 +45,7 @@ public class AppAuthenticationSuccessHandler extends SimpleUrlAuthenticationSucc
 
         // 判断不同角色跳转到不同的url
         if ((isAdmin(roleList) || isUser(roleList))) {
-            url = "/login";
+            url = "/html/index.html";
         } else {
             url = "/accessDenied";
         }
