@@ -55,7 +55,7 @@ public class AppSecurityConfiguration extends WebSecurityConfigurerAdapter {
         return daoAuthenticationProvider;
     }
 
-    // 用户自定义认证
+    // 用户自定义认证, 使用依赖注入的authenticationProvider设置验证使用的Service和加密方式等
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
         auth.authenticationProvider(authenticationProvider);
@@ -66,9 +66,10 @@ public class AppSecurityConfiguration extends WebSecurityConfigurerAdapter {
     // .anyRequest().authenticated() 表示其他的请求都必须要有权限认证
     // .headers().frameOptions().disable() 表示取消禁止网页被Frame, 使得网页可以被Frame[Spring Security默认使用X-Frame-Options防止网页被Frame]
     // .csrf().disable() 表示关闭Spring Security的跨域保护(CSRF Protection)
-    // .failureUrl("/") 表示登录失败后发送的请求[GET]
-    // .successHandler(appAuthenticationSuccessHandler).successHandler(appAuthenticationSuccessHandler) 登录成功处理, 可以按权限分别进入不同的登录页面
-    // .defaultSuccessUrl("/login") 登录成功后默认的页面
+    // .formLogin().failureUrl("/") 表示登录失败后发送的请求[GET]
+    // .formLogin().successHandler(appAuthenticationSuccessHandler).successHandler(appAuthenticationSuccessHandler) 登录成功处理, 可以按权限分别进入不同的登录页面
+    // .formLogin().defaultSuccessUrl("/login") 登录成功后默认的页面
+    // .headers().contentTypeOptions().disable() Spring Security 4.x默认发送响应头 Header set X-Content-Type-Options "nosniff" 拒绝错误MIME类型的响应, 此设置取消设置响应头
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http
