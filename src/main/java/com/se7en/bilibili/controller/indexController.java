@@ -1,5 +1,7 @@
 package com.se7en.bilibili.controller;
 
+import com.se7en.bilibili.service.UserService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.web.authentication.logout.SecurityContextLogoutHandler;
@@ -12,6 +14,9 @@ import javax.servlet.http.HttpServletResponse;
 
 @Controller
 public class indexController {
+
+    @Autowired
+    UserService userService;
 
     @RequestMapping(value = "/")
     // 将"/"请求响应到login页面
@@ -27,7 +32,8 @@ public class indexController {
     }
 
     @RequestMapping(value = "/loginError")
-    public String loginError() {
+    public String loginError(String username, HttpServletRequest request) {
+        request.setAttribute("message", userService.SpringSecurityFailureForwardUrlMessage(username));
 
         return "login";
     }
@@ -40,6 +46,7 @@ public class indexController {
         if (authentication != null){
             new SecurityContextLogoutHandler().logout(request, response, authentication);
         }
+
         // 重定向到login页面
         return "redirect:/?logout";
     }

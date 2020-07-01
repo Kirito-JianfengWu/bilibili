@@ -98,6 +98,17 @@ public class UserService implements UserDetailsService {
         }
     }
 
+    @Transactional
+    // Spring Security .failureForwardUrl("/loginError") 登录验证失败时判断登录时输入的账号密码, 返回相关提示信息
+    public String SpringSecurityFailureForwardUrlMessage(String username) {
+        UserRole userRole = userRoleRepository.findByUsername(username);
+        if (userRole == null) {
+            return "用户名不存在";
+        }
+
+        return "密码错误";
+    }
+
     // 重写UserDetailsService接口中的loadUserByUsername方法, 通过该方法查询到对应的用户
     // 返回对象UserDetails是Spring Security中一个核心的接口
     // 其中定义了一些可以获取用户名、密码、权限等与认证相关的信息的方法

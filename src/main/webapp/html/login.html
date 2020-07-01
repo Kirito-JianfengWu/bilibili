@@ -6,7 +6,8 @@
     <link rel="shortcut icon" th:href="@{../images/favicon.ico}"/>
     <link rel="bookmark" th:href="@{../images/favicon.ico}"/>
     <link rel="stylesheet" type="text/css" href="../css/login.css">
-    <link href="../fontawesome-free/css/all.css" rel="stylesheet">
+    <link href="/webjars/font-awesome/5.13.0/css/all.css" rel="stylesheet">
+<!--    <link href="../fontawesome-free/css/all.css" rel="stylesheet">-->
 <!--    <link href="https://cdn.bootcss.com/font-awesome/5.12.1/css/all.min.css" rel="stylesheet">-->
 </head>
 <body onload="load()">
@@ -15,7 +16,7 @@
     <div class="loginBox">
         <img class="user" src="../images/user-icon.png" height="100px" width="100px" alt="UserIcon">
         <h3 class="signTitle">Sign in here</h3>
-        <form method="post" action="/login">
+        <form method="post" action="/login" onsubmit="submitCheck()">
             <div class="inputBox">
                 <input type="text" name="username" id="username" placeholder="username" autofocus="autofocus">
                 <span>
@@ -34,5 +35,6 @@
         <a href="#">Forget Password</a>
     </div>
     <script type="text/javascript" src="../js/login.js"></script>
+    <script type="text/javascript" src="/webjars/font-awesome/5.13.0/css/all.min.css"></script>
 </body>
 </html>

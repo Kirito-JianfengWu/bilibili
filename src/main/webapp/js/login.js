@@ -14,3 +14,13 @@ function load() {
     setTimeout("loading.style.display='none'",800);
     //当透明度为0的时候，隐藏掉它
 }
+
+function submitCheck() {
+    let username = document.getElementById("username").value;
+    let password = document.getElementById("password").value;
+    if ((username == "") || (password == "")) {
+        return "账号或密码不能为空"
+    }
+
+    return "账号或密码不能为空";
+}
