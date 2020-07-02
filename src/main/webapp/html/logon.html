@@ -6,11 +6,15 @@
     <link rel="shortcut icon" th:href="@{../images/favicon.ico}">
     <link rel="bookmark" th:href="@{../images/favicon.ico}">
     <link rel="stylesheet" type="text/css" href="../css/logon.css">
+    <link rel="stylesheet" type="text/css" href="../css/loaderComponent.css">
 </head>
 <body onload="load()">
     <!--loader页面加载动画 iframe的src需要写html/不然项目启动后寻址不到-->
-    <iframe id="loading" src="../html/loader.html"></iframe>
-    <h3>To Logon bilibili</h3>
+    <iframe id="loader" src="../html/loader.html"></iframe>
+    <div class="main">
+        <h3>To Logon bilibili</h3>
+    </div>
+    <script type="text/javascript" src="/webjars/jquery/3.5.1/jquery.min.js"></script>
     <script type="text/javascript" src="../js/logon.js"></script>
 </body>
 </html>

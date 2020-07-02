@@ -47,6 +47,7 @@ dependencies {
     testImplementation 'org.springframework.amqp:spring-rabbit-test'
     testImplementation 'org.springframework.security:spring-security-test'
     compile 'org.webjars:bootstrap:4.5.0'
+    compile 'org.webjars.bowergithub.sentsin:layer:3.1.1'
     compile 'org.webjars:font-awesome:5.13.0'
     compile 'org.webjars:jquery:3.5.1'
 }
