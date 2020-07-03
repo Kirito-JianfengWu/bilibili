@@ -5,9 +5,9 @@
     <title>Login bilibili []~(￣▽￣)~*</title>
     <link rel="shortcut icon" href="../images/favicon.ico">
     <link rel="bookmark" href="../images/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="../css/loaderComponent.css">
     <link rel="stylesheet" type="text/css" href="/webjars/font-awesome/5.13.0/css/all.min.css">
     <link rel="stylesheet" type="text/css" href="../css/login.css">
-    <link rel="stylesheet" type="text/css" href="../css/loaderComponent.css">
 </head>
 <body>
     <!--loader页面加载动画 iframe的src需要写html/不然项目启动后寻址不到-->
@@ -16,9 +16,9 @@
         <img class="user" src="../images/user-icon.png" height="100px" width="100px" alt="UserIcon">
         <h3 class="signTitle">Sign in here</h3>
         <div id="loginMessageInputBox" th:if="${message}">
-            <span id="loginMessage">[[${message}]]</span>
+            <span id="loginMessage" th:attr="data-message=${message}">[[${message}]]</span>
             <span>
-                <i class="fa fa-times"></i>
+                <i class="fa fa-times" id="messageBoxCloseButton"></i>
             </span>
         </div>
         <form method="post" id="loginForm" action="/login">

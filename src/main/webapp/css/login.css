@@ -19,7 +19,7 @@ body {
     background-repeat: no-repeat;
     background-size: 100% 100%;
     background-attachment: fixed;
-    background-color: #142238;
+    background-color: #925b47;
     font-family: "Microsoft YaHei UI Light", serif;
 }
 
@@ -28,19 +28,29 @@ body {
     padding: 5px 0 5px 0;
     text-align: center;
     background: #925b47;
-    border: #503227 3px solid;
+    border: #3c251d 3px solid;
     border-radius: 6px;
 }
 
 #loginMessageInputBox #loginMessage {
-    color: #e0c6b7;
+    color: #3c251d;
     user-select: none;
     font-family: "Microsoft YaHei UI Light", serif;
-    font-size: 14px;
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 21px;
 }
 
 #loginMessageInputBox span i {
-    color: #503227;
+    color: #3c251d;
+    float: right;
+    margin-right: 10px;
+    line-height: 21px;
+    cursor: pointer;
+}
+
+#loginMessageInputBox span i:hover {
+    color: #3299fe;
 }
 
 .loginBox {
@@ -72,7 +82,7 @@ body {
     background-repeat: no-repeat;
     background-size: 100% 100%;
     /*background-attachment: fixed;*/
-    /*background-color: #142238;*/
+    background-color: #503227;
     filter: blur(10px);
 }
 
@@ -150,9 +160,9 @@ body {
 }
 
 .Visible {
-    display: block;
+    display: block !important;
 }
 
 .InVisible {
-    display: none;
+    display: none !important;
 }

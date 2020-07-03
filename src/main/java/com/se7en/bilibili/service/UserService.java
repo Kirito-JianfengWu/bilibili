@@ -105,10 +105,10 @@ public class UserService implements UserDetailsService {
     public String SpringSecurityFailureForwardUrlMessage(String username) {
         UserRole userRole = userRoleRepository.findByUsername(username);
         if (userRole == null) {
-            return "用户名不存在!";
+            return "Username not exist!";
         }
 
-        return "用户密码错误!";
+        return "Password incorrect!";
     }
 
     // 重写UserDetailsService接口中的loadUserByUsername方法, 通过该方法查询到对应的用户
