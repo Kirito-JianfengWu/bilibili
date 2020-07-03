@@ -3,29 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <title>Login bilibili []~(￣▽￣)~*</title>
-    <link rel="shortcut icon" th:href="@{../images/favicon.ico}">
-    <link rel="bookmark" th:href="@{../images/favicon.ico}">
+    <link rel="shortcut icon" href="../images/favicon.ico">
+    <link rel="bookmark" href="../images/favicon.ico">
     <link rel="stylesheet" type="text/css" href="/webjars/font-awesome/5.13.0/css/all.min.css">
     <link rel="stylesheet" type="text/css" href="../css/login.css">
     <link rel="stylesheet" type="text/css" href="../css/loaderComponent.css">
 </head>
-<body onload="load()">
+<body>
     <!--loader页面加载动画 iframe的src需要写html/不然项目启动后寻址不到-->
     <iframe id="loader" src="../html/loader.html"></iframe>
     <div class="loginBox">
         <img class="user" src="../images/user-icon.png" height="100px" width="100px" alt="UserIcon">
         <h3 class="signTitle">Sign in here</h3>
+        <div id="loginMessageInputBox" th:if="${message}">
+            <span id="loginMessage">[[${message}]]</span>
+            <span>
+                <i class="fa fa-times"></i>
+            </span>
+        </div>
         <form method="post" id="loginForm" action="/login">
-            <div class="inputBox" id="loginMessageInputBox">
-                <input type="text" id="loginMessage" th:if="${message}" th:value="${message}">
-            </div>
-            <div class="inputBox" id="usernameInputBox">
+            <div class="inputBox">
                 <input type="text" name="username" id="username" placeholder="username" autofocus="autofocus">
                 <span>
                     <i class="fa fa-user" aria-hidden="true"></i>
                 </span>
             </div>
-            <div class="inputBox" id="passwordInputBox">
+            <div class="inputBox">
                 <input type="password" name="password" id="password" placeholder="password">
                 <span>
                     <i class="fa fa-lock" aria-hidden="true"></i>
@@ -37,7 +40,8 @@
         <a href="#">Forget Password</a>
     </div>
     <script type="text/javascript" src="/webjars/jquery/3.5.1/jquery.min.js"></script>
-    <script type="text/javascript" src="webjars/layer/src/layer.js"></script>
+    <script type="text/javascript" src="/webjars/layer/src/layer.js"></script>
+    <script type="text/javascript" src="../js/common.js"></script>
     <script type="text/javascript" src="../js/login.js"></script>
 </body>
 </html>

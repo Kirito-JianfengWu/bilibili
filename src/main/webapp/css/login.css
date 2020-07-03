@@ -19,8 +19,28 @@ body {
     background-repeat: no-repeat;
     background-size: 100% 100%;
     background-attachment: fixed;
-    /*background-color: #242d42;*/
+    background-color: #142238;
     font-family: "Microsoft YaHei UI Light", serif;
+}
+
+#loginMessageInputBox {
+    margin: 0 0 15px;
+    padding: 5px 0 5px 0;
+    text-align: center;
+    background: #925b47;
+    border: #503227 3px solid;
+    border-radius: 6px;
+}
+
+#loginMessageInputBox #loginMessage {
+    color: #e0c6b7;
+    user-select: none;
+    font-family: "Microsoft YaHei UI Light", serif;
+    font-size: 14px;
+}
+
+#loginMessageInputBox span i {
+    color: #503227;
 }
 
 .loginBox {
@@ -52,7 +72,7 @@ body {
     background-repeat: no-repeat;
     background-size: 100% 100%;
     /*background-attachment: fixed;*/
-    /*background-color: #242d42;*/
+    /*background-color: #142238;*/
     filter: blur(10px);
 }
 
