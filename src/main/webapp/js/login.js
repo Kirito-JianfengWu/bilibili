@@ -17,8 +17,8 @@ document.onreadystatechange = function() {
     }
 }
 
+// 如果登录界面上有后端返回登录失败的信息条, 在下次触发登录按钮点击事件时隐藏信息条
 function hideLoginMessageInputBox() {
-    // 如果登录界面上有后端返回登录失败的信息条, 在下次触发登录按钮点击事件时隐藏信息条
     let loginMessageInputBox = $("#loginMessageInputBox");
     let loginMessage = $("#loginMessage");
     if (loginMessage.data("message") !== undefined && loginMessage.data("message") !== "") {
@@ -61,7 +61,26 @@ $(function () {
             return false;
         }
 
+        // 这里采用的是表单去提交, 登录失败会出现重新加载页面的情况, 这显得不太优雅
         $("#loginForm").submit();
+
+        // 这里采用的是Ajax方式, 登录失败不用重新加载整个页面, 只需要更新页面的一部分(注意: 目前有些问题)
+        /*$.ajax({
+            url: '/login',
+            type: 'post',
+            dataType: 'json',
+            data: {
+                username: username.val(),
+                password: password.val()
+            },
+            success: function(){
+                console.log("111111111");
+            },
+            error: function(){
+                console.log("222222222");
+            }
+        });*/
+
     });
 });
 

@@ -6,6 +6,8 @@ import com.se7en.bilibili.repository.AuthoritiesRepository;
 import com.se7en.bilibili.repository.AuthoritiesRoleRepository;
 import com.se7en.bilibili.repository.RoleRepository;
 import com.se7en.bilibili.repository.UserRoleRepository;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -27,7 +29,7 @@ import java.util.List;
 @Service
 public class UserService implements UserDetailsService {
 
-
+    protected final Log logger = LogFactory.getLog(this.getClass());
 
     @Autowired
     private AuthoritiesRepository authoritiesRepository;

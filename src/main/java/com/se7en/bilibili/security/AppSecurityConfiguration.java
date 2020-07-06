@@ -9,7 +9,6 @@ import org.springframework.security.authentication.dao.DaoAuthenticationProvider
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
 /**
@@ -21,6 +20,9 @@ public class AppSecurityConfiguration extends WebSecurityConfigurerAdapter {
 
     @Autowired
     AppAuthenticationSuccessHandler appAuthenticationSuccessHandler;
+
+    @Autowired
+    AppAuthenticationFailureHandler appAuthenticationFailureHandler;
 
     @Autowired
     private UserService userService;
@@ -67,7 +69,7 @@ public class AppSecurityConfiguration extends WebSecurityConfigurerAdapter {
     // .headers().frameOptions().disable() 表示取消禁止网页被Frame, 使得网页可以被Frame[Spring Security默认使用X-Frame-Options防止网页被Frame]
     // .csrf().disable() 表示关闭Spring Security的跨域保护(CSRF Protection)
     // .formLogin().failureUrl("/") 表示登录失败后发送的请求[GET]
-    // .formLogin().successHandler(appAuthenticationSuccessHandler).successHandler(appAuthenticationSuccessHandler) 登录成功处理, 可以按权限分别进入不同的登录页面
+    // .formLogin().successHandler(appAuthenticationSuccessHandler) 登录成功处理, 可以按权限分别进入不同的登录页面
     // .formLogin().defaultSuccessUrl("/login") 登录成功后默认的页面
     // .headers().contentTypeOptions().disable() Spring Security 4.x默认发送响应头 Header set X-Content-Type-Options "nosniff" 拒绝错误MIME类型的响应, 此设置取消设置响应头
     @Override
@@ -83,10 +85,9 @@ public class AppSecurityConfiguration extends WebSecurityConfigurerAdapter {
             .formLogin()
                 .loginPage("/")
                 .loginProcessingUrl("/login")
-                .usernameParameter("username")
-                .passwordParameter("password")
-                .failureForwardUrl("/loginError")
+                .usernameParameter("username").passwordParameter("password")
                 .defaultSuccessUrl("/html/index.html")
+                .failureForwardUrl("/loginError")
                 .and()
             .logout().permitAll()
                 .and()

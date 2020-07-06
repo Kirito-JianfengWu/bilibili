@@ -1,19 +1,23 @@
 package com.se7en.bilibili.controller;
 
 import com.se7en.bilibili.service.UserService;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.web.authentication.logout.SecurityContextLogoutHandler;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 @Controller
 public class indexController {
+
+    protected final Log logger = LogFactory.getLog(this.getClass());
 
     @Autowired
     UserService userService;
@@ -28,13 +32,16 @@ public class indexController {
     @RequestMapping(value = "/login")
     public String login() {
 
+        System.out.println("/login ..." + System.currentTimeMillis());
         return "index";
     }
 
     @RequestMapping(value = "/loginError")
     public String loginError(String username, HttpServletRequest request) {
-        request.setAttribute("message", userService.SpringSecurityFailureForwardUrlMessage(username));
+        String message = userService.SpringSecurityFailureForwardUrlMessage(username);
+        request.setAttribute("message", message);
 
+        System.out.println("/loginError ..." + message + System.currentTimeMillis());
         return "login";
     }
 
