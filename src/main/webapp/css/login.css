@@ -15,7 +15,7 @@ body {
     padding: 0;
     width: 100%;
     height: 100%;
-    background-image: url("../images/login-background.jpeg");
+    /*background-image: url("../images/login-background.jpeg");*/
     background-repeat: no-repeat;
     background-size: 100% 100%;
     background-attachment: fixed;
@@ -50,7 +50,7 @@ body {
 }
 
 #loginMessageInputBox span i:hover {
-    color: #3299fe;
+    color: #e0c6b7;
 }
 
 .loginBox {
@@ -78,7 +78,7 @@ body {
     /*background-color: rgba(255,255,255, 0.4);*/
     z-index: -1;
     border-radius: 10px;
-    background-image: url("../images/login-background.jpeg");
+    /*background-image: url("../images/login-background.jpeg");*/
     background-repeat: no-repeat;
     background-size: 100% 100%;
     /*background-attachment: fixed;*/

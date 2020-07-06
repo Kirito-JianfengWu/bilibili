@@ -1,7 +1,8 @@
 // 此时jQuery还没有进行加载(就算放在header里也不能在body加载前完成加载), 所以不能使用jQuery写法
 // 页面加载完成后隐藏loader.html[iframe]
-function loadCompleteFallingAnimate(startOpacity, mySubTime, myTotalTime, myLoader, myMain, opacityTransitionTime, opacityTransitionTimeOut) {
-    // h = (g * t^2) / 2 自由落体距离公式 h[距离] g[重力加速度] t[时间]
+// 模拟匀加速直线运动的距离变化[由慢到快], 改变loader透明度
+function loadCompleteFallingAnimate(startOpacity, mySubTime, myTotalTime, myLoader, myMain) {
+    // h = (g * t^2) / 2 自由落体垂直距离公式 h[距离] g[重力加速度] t[时间]
     let opacity = startOpacity;
     let h = startOpacity;
     let subTime = mySubTime;
@@ -18,7 +19,7 @@ function loadCompleteFallingAnimate(startOpacity, mySubTime, myTotalTime, myLoad
     let main = myMain;
 
     // 设置透明度改变的过渡时间为0.3秒
-    setTimeout("loader.style.transition='opacity " + opacityTransitionTime + "'",opacityTransitionTimeOut);
+    // setTimeout("loader.style.transition='opacity " + opacityTransitionTime + "'",opacityTransitionTimeOut);
 
     // 1秒的加载动画不透明->透明渐变过程
     // 当透明度为0的时候，移出或隐藏loader
@@ -44,6 +45,31 @@ function loadCompleteFallingAnimate(startOpacity, mySubTime, myTotalTime, myLoad
 
         // console.log(opacity);
     }, subTime);
+
+    main.style.display="block";
+}
+
+// 模拟匀速直线运动的距离变化[快慢不变], 改变loader透明度
+function loadCompleteAnimate(startOpacity, mySubTime, myTotalTime, myLoader, myMain) {
+    // h = v * t 匀速直线运动距离公式 h[距离] v[速度] t[时间]
+    let opacity = startOpacity;
+    let n = myTotalTime / mySubTime;
+    let hn = opacity / n;
+
+    let loader = myLoader;
+    let main = myMain;
+
+    let timer = setInterval(function () {
+        if (opacity <= 0) {
+            clearInterval(timer);
+            loader.remove();
+        }
+
+        loader.style.opacity = opacity;
+
+        opacity -= (hn);
+
+    }, mySubTime);
 
     main.style.display="block";
 }

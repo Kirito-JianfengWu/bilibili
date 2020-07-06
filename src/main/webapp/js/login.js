@@ -10,7 +10,7 @@ document.onreadystatechange = function() {
         let loader = document.getElementById("loader");
         let main = document.getElementsByClassName("loginBox").item(0);
 
-        loadCompleteFallingAnimate(1, 10, 700, loader, main, "0.3s", 0);
+        loadCompleteFallingAnimate(1, 10, 1000, loader, main);
 
         // autofocus属性失效, 页面加载完后主动focus
         $("#username").focus();
