@@ -16,10 +16,10 @@ public class Role implements Serializable {
 
 	@Id
 	@GeneratedValue(generator = "jpa-uuid")
-	@Column(name = "roleid", nullable = false)
+	@Column(name = "roleid", nullable = false, columnDefinition = "varchar(255) comment '角色ID(UUID)'")
 	private String roleid;
 
-	@Column(name = "rolename", nullable = false)
+	@Column(name = "rolename", nullable = false, columnDefinition = "varchar(255) comment '角色名称'")
 	private String rolename;
 
 }

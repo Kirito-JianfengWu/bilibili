@@ -16,22 +16,22 @@ public class UserRole implements Serializable {
 
 	@Id
 	@GeneratedValue(generator = "jpa-uuid")
-	@Column(name = "userid", nullable = false)
+	@Column(name = "userid", nullable = false, columnDefinition = "varchar(255) comment '用户ID(UUID)'")
 	private String userid;
 
-	@Column(name = "username", nullable = false)
+	@Column(name = "username", nullable = false, columnDefinition = "varchar(255) comment '用户名称'")
 	private String username;
 
-	@Column(name = "roleid", nullable = false)
+	@Column(name = "roleid", nullable = false, columnDefinition = "varchar(255) comment '角色ID(UUID)'")
 	private String roleid;
 
-	@Column(name = "password", nullable = false)
+	@Column(name = "password", nullable = false, columnDefinition = "varchar(255) comment '密码'")
 	private String password;
 
-	@Column(name = "gender")
+	@Column(name = "gender", columnDefinition = "varchar(255) comment '性别'")
 	private String gender;
 
-	@Column(name = "email")
+	@Column(name = "email", columnDefinition = "varchar(255) comment '邮箱'")
 	private String email;
 
 }

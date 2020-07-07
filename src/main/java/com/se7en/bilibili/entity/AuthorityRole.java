@@ -17,12 +17,12 @@ public class AuthorityRole implements Serializable {
 
 	@Id
 	@GeneratedValue(generator = "jpa-uuid")
-	@Column(name = "authorityid", nullable = false)
+	@Column(name = "authorityid", nullable = false, columnDefinition = "varchar(255) comment '权限ID(UUID)'")
 	private String authorityid;
 
 	@Id
 	@GeneratedValue(generator = "jpa-uuid")
-	@Column(name = "roleid", nullable = false)
+	@Column(name = "roleid", nullable = false, columnDefinition = "varchar(255) comment '角色ID(UUID)'")
 	private String roleid;
 
 }
