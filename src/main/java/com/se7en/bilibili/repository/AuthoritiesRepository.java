@@ -1,11 +1,11 @@
 package com.se7en.bilibili.repository;
 
-import com.se7en.bilibili.entity.Authorities;
+import com.se7en.bilibili.entity.Authority;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface AuthoritiesRepository extends JpaRepository<Authorities, String>{
+public interface AuthoritiesRepository extends JpaRepository<Authority, String>{
 
-    Authorities findByAuthoritiesid(String authoritiesid);
+    Authority findByAuthorityid(String authoritiesid);
 
-    Authorities findByAuthoritiesname(String authoritiesname);
+    Authority findByAuthorityname(String authoritiesname);
 }

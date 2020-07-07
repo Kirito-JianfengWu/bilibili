@@ -8,17 +8,17 @@ import java.io.Serializable;
 
 @Data
 @Entity
-@Table(name = "authorities_role")
+@Table(name = "authority_role")
 @GenericGenerator(name = "jpa-uuid", strategy = "uuid")
-@IdClass(AuthoritiesRolePrimaryKey.class)
-public class AuthoritiesRole implements Serializable {
+@IdClass(AuthorityRolePrimaryKey.class)
+public class AuthorityRole implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
 	@Id
 	@GeneratedValue(generator = "jpa-uuid")
-	@Column(name = "authoritiesid", nullable = false)
-	private String authoritiesid;
+	@Column(name = "authorityid", nullable = false)
+	private String authorityid;
 
 	@Id
 	@GeneratedValue(generator = "jpa-uuid")
