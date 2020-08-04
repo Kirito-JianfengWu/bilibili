@@ -13,12 +13,15 @@ input:-webkit-autofill , textarea:-webkit-autofill, select:-webkit-autofill {
 body {
     margin: 0;
     padding: 0;
-    width: 100%;
-    height: 100%;
-    /*background-image: url("../images/login-background.jpeg");*/
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
+    width: 100vw;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    background-image: url("../images/login-background.jpeg");
     background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
     background-color: #925b47;
     font-family: "Microsoft YaHei UI Light", serif;
 }
@@ -35,7 +38,6 @@ body {
 #loginMessageInputBox #loginMessage {
     color: #3c251d;
     user-select: none;
-    font-family: "Microsoft YaHei UI Light", serif;
     font-size: 16px;
     font-weight: bold;
     line-height: 21px;
@@ -54,16 +56,18 @@ body {
 }
 
 .loginBox {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    position: relative;
+    /*top: 50%;*/
+    /*left: 50%;*/
+    /*transform: translate(-50%, -50%);*/
     width: 350px;
     min-height: 200px;
-    background-color: rgba(255, 255, 255, 0.4);
+    background: inherit;
+    box-shadow: inset 0 0 0 175px rgba(225, 225, 225, 0.25);
     border-radius: 10px;
     padding: 40px;
     box-sizing: border-box;
+    z-index: 100;
     /*overflow: hidden;*/
     display: none;
 }
@@ -75,14 +79,11 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    /*background-color: rgba(255,255,255, 0.4);*/
     z-index: -1;
     border-radius: 10px;
-    /*background-image: url("../images/login-background.jpeg");*/
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
-    /*background-attachment: fixed;*/
-    background-color: #503227;
+    background: inherit;
+    /*box-shadow: inset 0 0 0 175px rgba(225, 225, 225, 0.25);*/
+    /*background-color: #503227;*/
     filter: blur(10px);
 }
 
