@@ -63,7 +63,7 @@ body {
     width: 350px;
     min-height: 200px;
     background: inherit;
-    box-shadow: inset 0 0 0 175px rgba(225, 225, 225, 0.25);
+    box-shadow: inset 0 0 0 175px rgba(225, 225, 225, 0.28);
     border-radius: 10px;
     padding: 40px;
     box-sizing: border-box;
@@ -82,9 +82,9 @@ body {
     z-index: -1;
     border-radius: 10px;
     background: inherit;
-    /*box-shadow: inset 0 0 0 175px rgba(225, 225, 225, 0.25);*/
+    /*box-shadow: inset 0 0 0 175px rgba(225, 225, 225, 0.28);*/
     /*background-color: #503227;*/
-    filter: blur(10px);
+    filter: saturate(110%) blur(10px);
 }
 
 .user {
